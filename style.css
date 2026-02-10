@@ -1,0 +1,306 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    background: linear-gradient(135deg, #ffe6f0, #ffd9e6);
+    color: #d6336c;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 25px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 1.7rem;
+    margin-bottom: 30px;
+}
+
+.btn {
+    padding: 15px 35px;
+    font-size: 1.2rem;
+    margin: 10px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    color: white;
+}
+
+#yesBtn {
+    background: linear-gradient(45deg, #ff4da6, #ff80b3);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 15px 40px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(255, 77, 166, 0.5);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+#yesBtn:hover {
+    animation: heartbeat 0.6s infinite;
+    box-shadow: 0 10px 25px rgba(255, 77, 166, 0.7), 0 0 20px rgba(255, 192, 203, 0.6);
+}
+
+/* Heartbeat keyframes */
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    14% { transform: scale(1.3); }
+    28% { transform: scale(1); }
+    42% { transform: scale(1.3); }
+    70% { transform: scale(1); }
+    100% { transform: scale(1); }
+}
+#yesBtn::after {
+    content: "💖";
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2rem;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+#yesBtn:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-10px);
+}
+
+
+#noBtn {
+    background: #ffb3c6; /* soft pink */
+    color: #8b0000;       /* deep red text */
+    transition: background 0.3s, color 0.3s;
+}
+
+#noBtn:hover {
+    background: #ff8099; /* slightly brighter pink on hover */
+    color: #56050d;       /* text deepens */
+}
+
+.pictures img {
+    width: 150px;
+    height: 150px;
+    border-radius: 20px;
+    cursor: pointer;
+    animation: float 4s ease-in-out infinite;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.pictures img:hover {
+    transform: scale(1.2);
+    box-shadow: 0 10px 25px rgba(255,77,166,0.6);
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    padding-top: 80px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    border-radius: 15px;
+}
+
+#closeModal {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+#caption {
+    margin: 15px auto;
+    text-align: center;
+    color: #fff;
+    font-size: 1.2rem;
+}
+/* Falling hearts */
+.heart {
+    position: fixed;
+    top: -10px;
+    font-size: 24px;
+    animation: fall linear forwards;
+    pointer-events: none;
+    z-index: 999;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Page entrance animation */
+.container {
+    animation: fadeIn 1.2s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Floating button effect */
+#yesBtn {
+    animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+.subtext {
+    font-size: 1.2rem;
+    opacity: 0.8;
+    margin-bottom: 25px;
+}
+.final {
+    height: 100vh;
+    background: linear-gradient(135deg, #ffb3d9, #ffe6f0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    animation: fadeIn 1.5s ease;
+}
+
+.final p {
+    font-size: 1.4rem;
+    max-width: 600px;
+    margin: 10px;
+}
+
+.signature {
+    margin-top: 20px;
+    font-style: italic;
+    opacity: 0.8;
+}
+#musicToggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 28px;
+    cursor: pointer;
+    animation: float 3s ease-in-out infinite;
+    opacity: 0.8;
+    z-index: 1000;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+#musicToggle:hover {
+    transform: scale(1.2);
+    opacity: 1;
+}
+.hidden {
+    display: none;
+}
+
+.final {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg, #ffb3d9, #ffe6f0);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    animation: fadeIn 1.5s ease;
+    z-index: 2000;
+}
+
+
+.final h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.final p {
+    font-size: 1.4rem;
+    max-width: 600px;
+    margin: 8px;
+}
+.final.show {
+    display: flex;
+}
+
+
+.signature {
+    margin-top: 20px;
+    font-style: italic;
+    opacity: 0.85;
+}
+.music-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 2.2rem;
+    cursor: pointer;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: bounce 1.5s infinite;
+}
+
+.music-toggle .toggle-sign {
+    font-size: 0.9rem;
+    color: #fff;
+    text-shadow: 0 0 5px #d6336c;
+    margin-top: 5px;
+    opacity: 0.9;
+    animation: pulse 2s infinite;
+}
+
+/* small animations */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.9; }
+    50% { opacity: 1; }
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine Surprise</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Happy 8th Anniversary Bok ❤️</h1>
+        <p>Will you be my Valentine?</p>
+        <p class="subtext">I already know the answer… but say it anyway 😏</p>
+
+        <div class="buttons">
+            <button id="yesBtn" class="btn">Yes 💖</button>
+            <button id="noBtn" class="btn">No ❌</button>
+        </div>
+
+        <div class="pictures-container">
+            <h2>Click our Memories</h2>
+            <div class="pictures">
+                <img src="images/1.jpg" alt="Our 7th Anniversary">
+                <img src="images/2.jpg" alt="First Sinulog together">
+                <img src="images/3.jpg" alt="Teaching math (na para bang naminaw hehe mwa)">
+                <img src="images/4.jpg" alt="Attending Novena Together">
+                <img src="images/5.png" alt="More of this pa pleasee">
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for picture preview -->
+    <div id="modal" class="modal">
+        <span id="closeModal">&times;</span>
+        <img id="modalImg" class="modal-content" alt="">
+        <div id="caption"></div>
+    </div>
+    <!-- Final message overlay -->
+<div id="finalScreen" class="final hidden">
+    <h1>I choose you. Always. 💘</h1>
+    <p>We’ve had misunderstandings.</p>
+    <p>We’ve been distant.</p>
+    <p>But you’re still the one I want to come back to.</p>
+    <p class="signature">— I miss you 🤍</p>
+</div>
+
+    <!-- Background music -->
+    <audio id="bgMusic" src="music.mp3" loop preload="auto"></audio>
+    <div id="musicToggle">PRESS ME!💗</div>
+
+    <!-- JS MUST be last -->
+    <script src="script.js"></script>
+
+</body>
+</html>
